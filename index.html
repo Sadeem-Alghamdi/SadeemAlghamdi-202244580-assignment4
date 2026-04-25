@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sadeem Alghamdi | Personal Web Application</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="bg-orb orb-1"></div>
+<div class="bg-orb orb-2"></div>
+<div class="bg-orb orb-3"></div>
+
+<button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<header class="header">
+  <nav class="nav container">
+    <a href="#home" class="logo" aria-label="Go to home">SA</a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="nav-menu" id="navMenu">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#github" class="nav-link">GitHub</a>
+      <a href="#live" class="nav-link">Live APIs</a>
+      <a href="#journey" class="nav-link">Journey</a>
+      <a href="#assistant" class="nav-link">AI Assistant</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#contact" class="nav-link">Contact</a>
+
+      <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section id="home" class="hero section">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <span class="greeting-badge" id="greeting">Hello</span>
+
+        <h1>I’m <span class="gradient-text">Sadeem Alghamdi</span></h1>
+
+        <p class="subtitle">
+          Software Engineering student building clean, interactive, and user-focused digital experiences.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">Explore Projects</a>
+          <a href="#assistant" class="btn btn-secondary">Ask Assistant</a>
+        </div>
+
+        <p class="mini-note">
+          This final portfolio application includes theme switching, filtering, localStorage, form validation, live APIs, a professional journey section, resume access, and an AI-inspired assistant.
+        </p>
+      </div>
+
+      <div class="hero-panel glass-card">
+        <h3>Personalize Your Visit</h3>
+        <p class="muted">Save your name for a more personal experience.</p>
+
+        <div class="name-row">
+          <input type="text" id="visitorName" placeholder="Enter your name" aria-label="Visitor name" maxlength="30" />
+          <button type="button" id="saveNameBtn" class="btn btn-primary small-btn">Save</button>
+          <button type="button" id="clearNameBtn" class="btn btn-secondary small-btn">Clear</button>
+        </div>
+
+        <p id="personalGreeting" class="personal-greeting" aria-live="polite"></p>
+
+        <div class="hero-stats">
+          <div class="stat-card">
+            <h4 class="counter" data-target="3">0</h4>
+            <p>Projects</p>
+          </div>
+          <div class="stat-card">
+            <h4 class="counter" data-target="5">0</h4>
+            <p>Major Sections</p>
+          </div>
+          <div class="stat-card">
+            <h4 class="counter" data-target="3">0</h4>
+            <p>Live APIs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-label">About</span>
+        <h2 class="section-title">Who I am and what I enjoy building</h2>
+        <p class="section-text">
+          I enjoy turning academic ideas into real, usable systems. My focus is not only on functionality, but also on clarity, user experience, and clean structure.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="glass-card about-card">
+          <h3>Who I Am</h3>
+          <p>
+            I am a Software Engineering student at KFUPM who enjoys problem solving, building structured interfaces, and improving the user experience through thoughtful interaction.
+          </p>
+        </div>
+
+        <div class="glass-card about-card">
+          <h3>What I Focus On</h3>
+          <ul class="feature-list">
+            <li><i class="fa-solid fa-check"></i> Clean and readable code</li>
+            <li><i class="fa-solid fa-check"></i> Modern UI with strong usability</li>
+            <li><i class="fa-solid fa-check"></i> Interactive front-end features</li>
+            <li><i class="fa-solid fa-check"></i> Organized project structure</li>
+          </ul>
+        </div>
+
+        <div class="glass-card about-card">
+          <h3>Quick Info</h3>
+          <div class="quick-info">
+            <p><i class="fa-solid fa-envelope"></i> Sadeem.g@icloud.com</p>
+            <p><i class="fa-solid fa-location-dot"></i> KFUPM, Saudi Arabia</p>
+            <p><i class="fa-solid fa-graduation-cap"></i> Software Engineering</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-label">Projects</span>
+        <h2 class="section-title">Interactive project showcase</h2>
+        <p class="section-text">Search, filter, open details, and save your favorite project.</p>
+      </div>
+
+      <div class="project-controls glass-card">
+        <div class="search-wrap">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="projectSearch" class="search-input" placeholder="Search projects by title or keyword" aria-label="Search projects" />
+        </div>
+
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="software">Software</button>
+          <button class="filter-btn" data-filter="database">Database</button>
+          <button class="filter-btn" data-filter="design">Design</button>
+        </div>
+
+        <p id="resultsCount" class="results-count" aria-live="polite"></p>
+        <p id="favoriteMessage" class="favorite-message" aria-live="polite"></p>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+        <article class="project-card glass-card" data-category="database" data-title="Horse Racing Database" data-keywords="sql database relational data design" data-project="Horse Racing Database" data-description="A relational database project designed to manage horses, races, trainers, and results with structured SQL queries and database relationships.">
+          <div class="project-top">
+            <div class="project-icon"><i class="fa-solid fa-database"></i></div>
+            <button class="favorite-btn" type="button" aria-label="Save favorite project"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <h3>Horse Racing Database</h3>
+          <p>A structured SQL-based database system for managing racing data and results.</p>
+          <div class="project-tags">
+            <span class="tag">SQL</span>
+            <span class="tag">Database Design</span>
+          </div>
+          <div class="project-actions">
+            <button class="btn btn-primary small-btn open-modal-btn" type="button">View Details</button>
+          </div>
+        </article>
+
+        <article class="project-card glass-card" data-category="software" data-title="KFUPM Map Tool" data-keywords="java campus map tool classes distance software" data-project="KFUPM Map Tool" data-description="A Java-based tool that helps calculate distances between campus locations and supports better class planning and navigation.">
+          <div class="project-top">
+            <div class="project-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+            <button class="favorite-btn" type="button" aria-label="Save favorite project"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <h3>KFUPM Map Tool</h3>
+          <p>A Java project that helps estimate movement between classes using campus locations.</p>
+          <div class="project-tags">
+            <span class="tag">Java</span>
+            <span class="tag">Data Structures</span>
+          </div>
+          <div class="project-actions">
+            <button class="btn btn-primary small-btn open-modal-btn" type="button">View Details</button>
+          </div>
+        </article>
+
+        <article class="project-card glass-card" data-category="design" data-title="Course Tutoring App" data-keywords="ux web design tutoring student platform" data-project="Course Tutoring App" data-description="A platform concept focused on helping students find tutoring support through a clear, usable, and student-centered interface.">
+          <div class="project-top">
+            <div class="project-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <button class="favorite-btn" type="button" aria-label="Save favorite project"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <h3>Course Tutoring App</h3>
+          <p>A student-centered platform concept for organizing tutoring sessions and support.</p>
+          <div class="project-tags">
+            <span class="tag">Web Design</span>
+            <span class="tag">UX</span>
+          </div>
+          <div class="project-actions">
+            <button class="btn btn-primary small-btn open-modal-btn" type="button">View Details</button>
+          </div>
+        </article>
+      </div>
+
+      <p id="emptyMessage" class="empty-message" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <section id="github" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-label">GitHub API</span>
+        <h2 class="section-title">Live GitHub profile and repositories</h2>
+        <p class="section-text">
+          This section fetches public profile data and recent repositories from GitHub in real time.
+        </p>
+      </div>
+
+      <div class="github-grid">
+        <div class="glass-card github-profile-card">
+          <div id="githubProfileLoading" class="api-loading">Loading GitHub profile...</div>
+          <div id="githubProfileError" class="api-error"></div>
+
+          <div id="githubProfile" class="hidden">
+            <div class="github-profile-top">
+              <img id="githubAvatar" class="github-avatar" src="" alt="GitHub avatar" />
+              <div>
+                <h3 id="githubName">GitHub User</h3>
+                <p id="githubUsername" class="muted">@username</p>
+              </div>
+            </div>
+
+            <p id="githubBio" class="section-text"></p>
+
+            <div class="github-stats">
+              <div class="stat-card">
+                <h4 id="githubReposCount">0</h4>
+                <p>Repos</p>
+              </div>
+              <div class="stat-card">
+                <h4 id="githubFollowers">0</h4>
+                <p>Followers</p>
+              </div>
+              <div class="stat-card">
+                <h4 id="githubFollowing">0</h4>
+                <p>Following</p>
+              </div>
+            </div>
+
+            <div class="project-actions">
+              <a id="githubProfileLink" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary small-btn">Visit GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card github-repos-card">
+          <div class="repos-head">
+            <h3>Recent Repositories</h3>
+            <button id="refreshGithubBtn" class="btn btn-secondary small-btn" type="button">Refresh</button>
+          </div>
+
+          <div id="githubReposLoading" class="api-loading">Loading repositories...</div>
+          <div id="githubReposError" class="api-error"></div>
+          <div id="githubRepos" class="repo-list"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="live" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-label">Live APIs</span>
+        <h2 class="section-title">Quote API and Weather API</h2>
+        <p class="section-text">These cards show a live random quote and current weather data.</p>
+      </div>
+
+      <div class="live-grid">
+        <div class="glass-card api-card">
+          <div class="repos-head">
+            <h3>Quote of the Moment</h3>
+            <button id="newQuoteBtn" class="btn btn-secondary small-btn" type="button">New Quote</button>
+          </div>
+
+          <div id="quoteLoading" class="api-loading">Loading quote...</div>
+          <div id="quoteError" class="api-error"></div>
+
+          <div id="quoteBox" class="hidden">
+            <p id="quoteText" class="quote-text">Quote goes here.</p>
+            <p id="quoteAuthor" class="quote-author">— Author</p>
+          </div>
+        </div>
+
+        <div class="glass-card api-card">
+          <div class="repos-head">
+            <h3>Current Weather</h3>
+            <button id="refreshWeatherBtn" class="btn btn-secondary small-btn" type="button">Refresh</button>
+          </div>
+
+          <div id="weatherLoading" class="api-loading">Loading weather...</div>
+          <div id="weatherError" class="api-error"></div>
+
+          <div id="weatherBox" class="hidden">
+            <div class="weather-top">
+              <div class="weather-icon-wrap">
+                <i id="weatherIcon" class="fa-solid fa-cloud-sun weather-icon"></i>
+              </div>
+              <div>
+                <h3 id="weatherLocation">Al-Khobar, Saudi Arabia</h3>
+                <p id="weatherDescription" class="muted">Weather condition</p>
+              </div>
+            </div>
+
+            <div class="weather-stats">
+              <div class="stat-card">
+                <h4 id="weatherTemp">--°C</h4>
+                <p>Temperature</p>
+              </div>
+              <div class="stat-card">
+                <h4 id="weatherWind">--</h4>
+                <p>Wind km/h</p>
+              </div>
+              <div class="stat-card">
+                <h4 id="weatherHumidity">--</h4>
+                <p>Humidity %</p>
+              </div>
+            </div>
+
+            <p id="weatherUpdated" class="weather-updated"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-label">Professional Journey</span>
+        <h2 class="section-title">From coursework to a polished portfolio application</h2>
+        <p class="section-text">
+          This timeline summarizes how the portfolio evolved from a static website into an interactive, API-driven, and presentation-ready web application.
+        </p>
+      </div>
+
+      <div class="journey-grid">
+        <div class="timeline glass-card">
+          <div class="timeline-item">
+            <span class="timeline-dot"></span>
+            <h3>Foundation</h3>
+            <p>Built the first portfolio structure using semantic HTML, reusable CSS, and clear page sections.</p>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-dot"></span>
+            <h3>Interactivity</h3>
+            <p>Added filtering, search, modal popups, theme switching, localStorage, validation, and scroll effects.</p>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-dot"></span>
+            <h3>Live Data</h3>
+            <p>Integrated GitHub, quote, and weather APIs using fetch, async/await, and error handling.</p>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-dot"></span>
+            <h3>Final Polish</h3>
+            <p>Added a professional journey section, resume card, AI assistant, and stronger user guidance.</p>
+          </div>
+        </div>
+
+        <div class="resume-card glass-card">
+          <div class="resume-icon">
+            <i class="fa-solid fa-file-lines"></i>
+          </div>
+          <h3>Professional Resume</h3>
+          <p class="section-text">
+            View or download my resume to learn more about my education, technical skills, projects, and experiences.
+          </p>
+
+          <div class="resume-actions">
+            <a href="assets/Sadeem_Alghamdi_Resume.pdf" target="_blank" class="btn btn-primary">View Resume</a>
+            <a href="assets/Sadeem_Alghamdi_Resume.pdf" download class="btn btn-secondary">Download Resume</a>
+          </div>
+
+          <p class="resume-note">
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="assistant" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-label">AI Portfolio Assistant</span>
+        <h2 class="section-title">Ask about this portfolio</h2>
+        <p class="section-text">
+          This assistant uses predefined AI-inspired responses to guide visitors through the portfolio in a clear and interactive way.
+        </p>
+      </div>
+
+      <div class="assistant-grid">
+        <div class="assistant-card glass-card">
+          <div class="assistant-header">
+            <div class="assistant-avatar">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <div>
+              <h3>Portfolio Assistant</h3>
+              <p class="muted">Choose a question below.</p>
+            </div>
+          </div>
+
+          <div class="assistant-questions">
+            <button class="assistant-question" data-answer="about">Tell me about Sadeem</button>
+            <button class="assistant-question" data-answer="projects">What projects are included?</button>
+            <button class="assistant-question" data-answer="tech">What technologies are used?</button>
+            <button class="assistant-question" data-answer="ai">How was AI used responsibly?</button>
+            <button class="assistant-question" data-answer="future">What are future improvements?</button>
+          </div>
+        </div>
+
+        <div class="assistant-response glass-card">
+          <h3>Assistant Response</h3>
+          <p id="assistantAnswer" class="section-text">
+            Select a question to see a guided response about the portfolio.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-label">Skills</span>
+        <h2 class="section-title">Switch between skill groups</h2>
+        <p class="section-text">Click the tabs below to explore different skill categories.</p>
+      </div>
+
+      <div class="tabs-wrap glass-card">
+        <div class="tabs" role="tablist">
+          <button class="tab-btn active" data-tab="programming" role="tab" aria-selected="true">Programming</button>
+          <button class="tab-btn" data-tab="tools" role="tab" aria-selected="false">Tools</button>
+          <button class="tab-btn" data-tab="soft" role="tab" aria-selected="false">Soft Skills</button>
+        </div>
+
+        <div id="programming" class="tab-content active">
+          <div class="skills-pills">
+            <span class="skill-pill">HTML</span>
+            <span class="skill-pill">CSS</span>
+            <span class="skill-pill">JavaScript</span>
+            <span class="skill-pill">Java</span>
+            <span class="skill-pill">SQL</span>
+          </div>
+        </div>
+
+        <div id="tools" class="tab-content">
+          <div class="skills-pills">
+            <span class="skill-pill">GitHub</span>
+            <span class="skill-pill">WebStorm</span>
+            <span class="skill-pill">VS Code</span>
+            <span class="skill-pill">APIs</span>
+          </div>
+        </div>
+
+        <div id="soft" class="tab-content">
+          <div class="skills-pills">
+            <span class="skill-pill">Communication</span>
+            <span class="skill-pill">Teamwork</span>
+            <span class="skill-pill">Presentation</span>
+            <span class="skill-pill">Problem Solving</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-banner glass-card">
+        <div class="highlight-emoji">✨</div>
+        <div>
+          <h3>Final Portfolio Focus</h3>
+          <p class="section-text">
+            This application demonstrates technical implementation, user experience, documentation, innovation, and presentation readiness.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-label">Contact</span>
+        <h2 class="section-title">Send a message</h2>
+        <p class="section-text">The form validates inputs and shows a professional front-end submission confirmation.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info glass-card">
+          <h3>Contact Information</h3>
+          <p class="section-text">You can use the links below to connect or explore more.</p>
+
+          <div class="contact-links">
+            <a href="mailto:Sadeem.g@icloud.com" class="contact-link">
+              <i class="fa-solid fa-envelope"></i> Email
+            </a>
+            <a href="#github" class="contact-link">
+              <i class="fa-brands fa-github"></i> GitHub Section
+            </a>
+            <a href="assets/Sadeem_Alghamdi_Resume.pdf" class="contact-link" target="_blank">
+              <i class="fa-solid fa-file-lines"></i> Resume
+            </a>
+          </div>
+        </div>
+
+        <form id="contactForm" class="contact-form glass-card" novalidate>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" maxlength="40" />
+            <small id="nameError" class="error-text"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" maxlength="80" />
+            <small id="emailError" class="error-text"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" maxlength="300"></textarea>
+            <div class="counter-row">
+              <small id="messageError" class="error-text"></small>
+              <small id="messageCounter">0 / 300</small>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit Message</button>
+          <div id="formMessage" class="form-message" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="modalOverlay" class="modal-overlay" aria-hidden="true">
+  <div class="modal glass-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button id="modalClose" class="modal-close" aria-label="Close modal">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div id="modalIcon" class="modal-icon"></div>
+    <h3 id="modalTitle">Project Title</h3>
+    <p id="modalDescription">Project description goes here.</p>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container footer-content">
+    <p>© <span id="year"></span> Sadeem Alghamdi. Personal Web Application.</p>
+    <p class="muted">Built with HTML, CSS, JavaScript, APIs, and responsible AI support.</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
